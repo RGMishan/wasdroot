@@ -179,21 +179,57 @@
 <div id="advantage"> <!-- //advantage start -->
 	<div class="container"> <!-- //container start -->
 		<div class="same-height-row"> <!-- //making same height open -->
+			
 			<div class="col-sm-4"> <!-- column divisor start -->
 				<div class="box same-height"> <!-- //box made inside open -->
 					<div class="icon"> <!-- //icon inside box -->
-						<i class="fa fa-heart"></i>
+						<i class="fa fa-thumbs-up"></i>
 					</div>
 					<h3><a href="#">BEST GAMES</h3>
-						<p>You can check out all the latest and trending game through us.</p>
-				</div>
-			</div>
-		</div>		
+						<p>You can check out all the latest and trending game through us. And do shop with us.</p>
+				</div> <!-- // making box closed -->
+			</div> <!-- //cloumn divisor closed -->
+
+			<div class="col-sm-4"> <!-- column divisor start -->
+				<div class="box same-height"> <!-- //box made inside open -->
+					<div class="icon"> <!-- //icon inside box -->
+						<i class="fa fa-cog"></i>
+					</div>
+					<h3><a href="#">COMPATIBILITY FEATURE</h3>
+						<p>Known which game runs smooth on you PC. Just check out our feature check my compatibiliy.</p>
+				</div> <!-- // making box closed -->
+			</div> <!-- //cloumn divisor closed -->
+
+
+			<div class="col-sm-4"> <!-- column divisor start -->
+				<div class="box same-height"> <!-- //box made inside open -->
+					<div class="icon"> <!-- //icon inside box -->
+						<i class="fa fa-globe"></i>
+					</div>
+					<h3><a href="#">ALL IN 1 STORE</h3>
+						<p>Why go shopping in 3 different when you can get PC, XBOX and PS games in a same location.</p>
+				</div> <!-- // making box closed -->
+			</div> <!-- //cloumn divisor closed -->
+
+
+
+		</div>	<!-- //making same height closed	 -->
 	</div>	<!-- //container division closed -->
 </div> <!-- //advantage divison closed -->
 
-//javascript bootstrap
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div id="hot"> <!-- //latest game container start -->
+	<div class="box"> <!-- //box in it open -->
+		<div class="container"> <!-- //container start -->
+			<div class="col-md-12"> <!-- // dividing cloumn bootstrap -->
+				<h2>COMING SOON !!!</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- //javascript bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

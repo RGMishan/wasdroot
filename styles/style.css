@@ -35,7 +35,7 @@ body{
 	}
 }
 
- Targeting Particular tag
+ /*Targeting Particular tag*/
 #top a{
 	color: #fff;
 }
@@ -137,5 +137,62 @@ body{
 
 #slider{
 	margin-bottom: 14px;
-	
+}
+
+/* ADVANTAGES THE BOXES TAG*/
+
+
+.box{
+	background: #fff;
+	margin: 0 0 30px;
+	border: solid 1px #e6e6e6;
+	padding: 20px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#advantage{
+	text-align: center;
+}
+
+#advantage .box .icon{
+	position: absolute;
+	font-size: 120px;
+	width: 100%;
+	text-align: center;
+	top: -20px;
+	left: 0;
+	height: 100%;
+	float: left;
+	color: #eeeeee;
+	transition: all 0.2s ease-out;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+#advantage .box h3{
+	position: relative;
+	margin: 0 0 20px;
+	font-weight: 300;
+	text-transform: uppercase;
+	z-index: 2; 
+}
+
+#advantage .box h3 a:hover{
+	text-decoration: none;
+}
+
+#advantage .box p{
+	position: relative;
+	color: #555555;
+	z-index: 2;
+}
+
+/* COMING SOON BOX*/
+
+#hot h2{
+	text-transform: uppercase;
+	font-size: 36px;
+	color: #4993e4;
+	font-weight: 100;
+	text-align: center;
 }
