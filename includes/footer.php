@@ -23,11 +23,9 @@
 			<div class="col-md-3 col-sm-6"><!--  //colmd 2 open -->
 				<h4>Top Game Categories</h4>
 				<ul>
-					<li><a href = "#"> Shooting </a></li>
-					<li><a href = "#"> Arcade </a></li>
-					<li><a href = "#"> Fighting </a></li>
-					<li><a href = "#"> War </a></li>
-					<li><a href = "#"> Fun </a></li>
+					<li><a href = "#"> PC </a></li>
+					<li><a href = "#"> XBox </a></li>
+					<li><a href = "#"> PS4 </a></li>
 				</ul>	
 				<hr class="hidden-md hidden-lg">			
 			</div><!--  //colmd 2 closed -->

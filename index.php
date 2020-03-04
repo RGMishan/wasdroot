@@ -150,7 +150,7 @@
 			</ol>
 			<div class="carousel-inner"> <!-- //courouser inner started -->
 				<div class="item active">
-					<img src="admin_area/slider_images/1.png">
+					<img src="admin_area/slider_images/1main.png">
 				</div>
 				<div class="item">
 					<img src="admin_area/slider_images/2.jpg">

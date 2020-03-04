@@ -249,6 +249,68 @@ body{
 	margin-bottom: 10px;
 }
 
+/* PRODUCT CATEGORY SIDEBAR*/
+#content .panel.sidebar-menu{
+	box-sizing: border-box;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu{
+	margin-bottom: 20px;
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu li a{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#content .panel.sidebar-menu h3{
+	padding: 5px 0;
+	margin: 0;
+}
+
+
+/*CSS overrding Breadcrumb Bootstrap*/
+.breadcrumb{
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	background-color: #ffffff;
+	border-radius: 0;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb >li + li:before{
+	content: ">\00a0";
+	color: #cccccc;
+}
+
+@media (max-width: 991px){
+	.breadcrumb{
+		padding:8px 0;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FOOTER STYLING */
 
 #footer{
