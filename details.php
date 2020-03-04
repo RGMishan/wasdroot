@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>WASD STORE</title>
@@ -158,147 +158,101 @@
 			?>
 
 		</div>
-<!-- // sidebar code end -->
-		<div class="col-md-9"> <!-- // used 3 by sidebar left 9 by shop menu  OPEN-->
-			<div class="box">
-				<h1>Shop</h1>
-				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+<!-- //MAIN WORK FROM HERE -->
+
+<div class="col-md-9">
+	<div class ="row" id ="productmain">
+		<div class="col-sm-6"> <!-- //starting of col sm 6  part 1-->
+			<div id="mainimage">
+				<div id="mycarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#mycarousel" data-slide-to="1"></li>
+						<li data-target="#mycarousel" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner"><!--  //inner carousel start -->
+						
+						<div class="item active">
+							<center>
+								<img src="admin_area/product_images/hot/oriandwill.jpg" class="img-responsive">
+							</center>
+						</div>
+
+						<div class="item">
+							<center>
+								<img src="admin_area/product_images/hot/marvelavengers.jpg" class="img-responsive">
+							</center>
+						</div>
+
+						<div class="item">
+							<center>
+								<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
+							</center>
+						</div>
+
+					</div><!--  //inner carousel ends -->
+
+					<a href="#mycarousel" class="left carousel-control" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+
+					<a href="#mycarousel" class="right carousel-control" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+
+
+				</div>
 			</div>
+		</div> <!-- //closing of col sm 6 part 1-->
 
-			<div class ="row"><!--  //row start -->
-<!-- //ONE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
+		<div class="col-sm-6"><!-- //starting of col sm 6  part 2-->
+			<div class="box"> <!-- //box open -->
+				<h1 class="text=center">ALIEN GAME THE PC GAME</h1> <!-- //text name  -->
+					<form action="details.php" method="post" class="form-horizontal"> <!-- //form opened --> 
+						<div class="form-group">
+							<label class="col-md-5 control-label">Game Quantity</label>
+							<div class="col-md-7">
+								<select name="product_qty" class="form-control">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>							
 						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
 
-<!-- //TWO -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
+						<div class="form-group">
+							<label class="col-md-5 control-label">System Size</label>
+							<div class="col-md-7">
+								<select name="system_size" class="form-control">
+									<option>Select System Bit</option>
+									<option>32 Bit</option>
+									<option>64 Bit</option>
+								</select>
+							</div>	
 						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //THREE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FOUR -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FIVE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //SIX -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-			</div> <!--  //row end -->
+						<p class="price">INR 100</p>
+						<p class="text-center buttons">
+							<button class="btn btn-primary" type="submit">
+								<i class="fa fa-shopping-cart"></i>Add To Cart
+							</button>
+						</p>
+					</form><!-- // form closed -->
 
-<center>
-	<ul class="pagination"><!--  //Bootstrap Page No Class -->
-		<li><a href="shop.php">First Page</a></li>
-		<li><a href="shop.php">2</a></li>
-		<li><a href="shop.php">3</a></li>
-		<li><a href="shop.php">4</a></li>
-		<li><a href="shop.php">5</a></li>
-		<li><a href="shop.php">Last Page</a></li>
-	</ul>
-</center>
+			</div>	<!-- //box close -->
+		</div> <!-- //closing of col sm 6  part 2-->
 
-		</div> <!-- // used 3 by sidebar left 9 by shop menu  CLOSED-->
+
+
+	</div>
+</div> <!--  //end div tag -->
+
+<!-- //MAIN WORK FINISHED HERE -->
 
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 
