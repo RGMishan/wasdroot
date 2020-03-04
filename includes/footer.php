@@ -1,5 +1,5 @@
-<div id="footer">
-	<div class="container">
+<div id="footer"><!--  //footer start -->
+	<div class="container"> <!-- //container start -->
 		<div class="row"> <!-- //row start -->
 			
 			<div class="col-md-3 col-sm-6"> <!-- // colmd1 open -->
@@ -69,5 +69,22 @@
 				</p>
 			</div><!--  //colmd 4 end -->
 		</div> <!-- //row closed -->
-	</div>
+	</div> <!-- //container closed -->
 </div> <!-- //footer closed -->
+
+<!-- //copyright Section -->
+<div id="copyright">
+	<div class="container">
+		<div class="col-md-6">
+			<p class="pull-left">
+				&copy; 2020 Mr. Mishan Regmi
+			</p>
+		</div>
+		<div class="col-md-6">
+			<p class="pull-right">
+				A Website By: <a href="www.github.com/RGMishan"> WASD GAMING </a>	
+			</p>			
+		</div>
+	</div>
+	
+</div>
