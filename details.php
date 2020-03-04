@@ -245,18 +245,104 @@
 					</form><!-- // form closed -->
 
 			</div>	<!-- //box close -->
+<!-- //First Image -->
+		<div class="col-xs-4">
+			<a href="#" class="thumb">
+				<img src="admin_area/product_images/hot/oriandwill.jpg" class="img-responsive">
+			</a>
+		</div>
+<!-- //Second Image -->
+		<div class="col-xs-4">
+			<a href="#" class="thumb">
+				<img src="admin_area/product_images/hot/marvelavengers.jpg" class="img-responsive">
+			</a>
+		</div>
+<!-- //Third Image -->
+		<div class="col-xs-4">
+			<a href="#" class="thumb">
+				<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
+			</a>
+		</div>
+
+
 		</div> <!-- //closing of col sm 6  part 2-->
 
 
 
+	</div><!--  //row ending -->
+	
+	<div class="box" id ="details">
+		<h4>Game Details</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
+		<h4>Processor Size Available</h4>
+		<ul>
+			<li>34-bit</li>
+			<li>64-bit</li>
+		</ul>
+
 	</div>
+
+<!-- //ALSO LIKE ITEM OPEN -->
+	<div id="row same-height-row">
+		<div class= "col-md-3 col-sm-6">
+			<div class="box same-height headline">
+				<h3 class="text-center">Check Out These Games You May Like</h3>				
+			</div>
+		</div>	
+<!-- //Images of the Also May Like Games Start -->
+<!-- //first image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+
+<!-- //second image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+<!-- //Third image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+<!-- //Images of the Also May Like Games End -->
+
+	</div>
+<!-- //ALSO LIKE ITEM CLOSED -->
+
 </div> <!--  //end div tag -->
 
-<!-- //MAIN WORK FINISHED HERE -->
+<!-- //MAIN Product WorK FINISHED HERE -->
 
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 
-
 
 
 <!-- // Main shop work end -->
