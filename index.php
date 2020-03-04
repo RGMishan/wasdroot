@@ -176,11 +176,25 @@
 </div> <!-- // new slider container closed -->
 
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+<div id="advantage"> <!-- //advantage start -->
+	<div class="container"> <!-- //container start -->
+		<div class="same-height-row"> <!-- //making same height open -->
+			<div class="col-sm-4"> <!-- column divisor start -->
+				<div class="box same-height"> <!-- //box made inside open -->
+					<div class="icon"> <!-- //icon inside box -->
+						<i class="fa fa-heart"></i>
+					</div>
+					<h3><a href="#">BEST GAMES</h3>
+						<p>You can check out all the latest and trending game through us.</p>
+				</div>
+			</div>
+		</div>		
+	</div>	<!-- //container division closed -->
+</div> <!-- //advantage divison closed -->
+
+//javascript bootstrap
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
 
-
-
-LEFT AT 12 TH VIDEO START
