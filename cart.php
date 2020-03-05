@@ -158,7 +158,7 @@
 		<form action="cart.php" method="post" enctype="multipart-form-data">
 			<h1>Shopping Cart</h1>
 			<p class="text-muted"> Currently you have 3 item(s) in your cart</p>
-			<div class="table-responsive"><!-- //table responsive -->
+			<div class="table-responsive"><!-- //table responsive start -->
 			<table class="table"> <!-- //bootstrap class -->
 				<thead><!--  //makes bold -->
 					<tr>
@@ -170,15 +170,151 @@
 						<th colspan="1">Sub Total</th>
 					</tr>
 				</thead>
+				
+				<tbody>
+					<tr>
+						<td><img src="admin_area/product_images/pc_game/minecraft.jpg"></td>
+						<td>FORTNITE BATTLE ROYALE</td>
+						<td>2</td>
+						<td>INR 500</td>
+						<td>64 bit</td>
+						<td><input type="checkbox" name="remove[]"></td>
+						<td>INR 600</td>
+					</tr>	
+
+					<tr>
+						<td><img src="admin_area/product_images/pc_game/minecraft.jpg"></td>
+						<td>MINECRAFT</td>
+						<td>2</td>
+						<td>INR 400</td>
+						<td>64 bit</td>
+						<td><input type="checkbox" name="remove[]"></td>
+						<td>INR 800</td>
+					</tr>	
+				</tbody>
+
+				<tfoot>
+					<tr>
+						<th colspan="5">Total</th>
+						<th colspan="2">INR 398</th>
+					</tr>		
+				</tfoot>
 			</table>
-			</div>
+			</div> <!-- //table responsive closing -->
+
+			<div class="box-footer" ><!--  //footer box open -->
+
+				<div class="pull-left"><!--  //pull left start -->
+					<a href="index.php" class="btn btn-default">
+						<i class="fa fa-chevron-left">Continue Shopping</i>
+					</a>					
+				</div> <!-- //pull left closed -->
+
+				<div class ="pull-right">
+					<button class = "btn btn-default" type="submit" name="update" value="Update Cart">
+						<i class="fa fa-refresh">Update Cart</i>
+					</button>				
+					<a href="checkout.php" class="btn btn-primary">Proceed To Check Out<i class="fa fa-chevron-right"></i></a> 
+				</div>
+
+			</div><!--  //footer box closed -->
+
 		</form>
+	</div> <!-- //box closing -->
+
+
+<!-- //ALSO LIKE ITEM OPEN -->
+	<div id="row same-height-row">
+		<div class= "col-md-3 col-sm-6">
+			<div class="box same-height headline">
+				<h3 class="text-center">Check Out These Games You May Like</h3>				
+			</div>
+		</div>	
+<!-- //Images of the Also May Like Games Start -->
+<!-- //first image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+
+<!-- //second image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+<!-- //Third image you may like -->
+		<div class="center-responsive col-md-3">
+			<div class="product same-height">
+				<a href="">
+					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
+			    </a>
+			<div class="text">
+				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
+				<p class="price">INR 100</p>
+			</div>
+			</div>			
+		</div>
+<!-- //Images of the Also May Like Games End -->
+
 	</div>
-</div>
+<!-- //ALSO LIKE ITEM CLOSED -->
+
+</div><!--  //cart main div closing -->
 
 
 <!-- // Cart Page Portion Ended -->
  
+
+<!-- //SIDE CART SUMMARY OPEN -->
+
+<div class="col-md-3"><!--  //col md 3 started -->
+	<div class="box" id="order-summary">
+		<div class="box-header">
+			<h3>Order Summary</h3>			
+		</div>		
+		<p class="text-muted">Shipping and Additional Cost are calculated based on the values you have entered</p>
+		<div class="table-responsive">
+			<table class="table">
+				<tbody>
+					<tr>
+						<td>Order Subtotal</td>
+						<th>INR 5600</th>
+					</tr>
+					<tr>
+						<td>Shipping and handling</td>
+						<td>INR 0</td>
+					</tr>
+					<tr>
+						<td>TAX</td>
+						<td>INR 0</td>
+					</tr>
+					<tr class="total">
+						<td>Total</td>
+						<th>INR 5600</th>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+
+	</div>
+</div><!--  //col md 3 closed -->
+
+<!-- //SIDE CART SUMMARY cCLOSED -->
 
 
 </div> <!-- //row closed -->
