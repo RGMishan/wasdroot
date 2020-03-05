@@ -90,7 +90,7 @@
 							<li>
 								<a href="index.php"> Home</a>
 							</li>
-							<li  class="active" >
+							<li   >
 								<a href="shop.php"> Shop</a>
 							</li>
 							<li>
@@ -105,7 +105,7 @@
 							<li>
 								<a href="services.php">Services</a> <!-- //COMPATIBILITY GOES HERE -->
 							</li>
-							<li>
+							<li class="active">
 								<a href="contactus.php">Contact Us</a>
 							</li>
 						</ul>
@@ -146,7 +146,7 @@
 		<div class="col-md-12"><!--  //column on medium screen 1 open -->
 			<ul class="breadcrumb"><!--  //bootstrap default class for navigation-->
 				<li><a href="home.php">Home</a></li>
-				<li>Shop</li>
+				<li>Contact Us</li>
 			</ul>	
 		</div> <!-- //column on medium screen 1 open -->
 
@@ -160,146 +160,50 @@
 		</div>
 <!-- // sidebar code end -->
 
-		<div class="col-md-9"> <!-- // used 3 by sidebar left 9 by shop menu  OPEN-->
-			<div class="box">
-				<h1>Shop</h1>
-				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<!-- //CONTACT US PAGE STARTED -->
+
+<div class="col-md-9"> <!-- //contact page start -->
+	<div class="box"> <!-- //box opens -->
+		<div class ="box-header">
+			<center>
+				<h2>Contact Us</h2>
+				<p class="text-muted"> Feel free to contact our developers team if you have ay queries or problem with the website.</p>
+			</center>			
+		</div>
+
+		<form action="contactus.php" method="post">
+			
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" required="" class="form-control">				
+			</div>			
+			<div class="form-group">
+				<label>Email</label>
+				<input type="text" name="email" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Subject</label>
+				<input type="text" name="subject" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Message</label>
+				<textarea name="message" class="form-control"></textarea> 				
+			</div>
+			<div class="text-center">
+				<button type="submit" name="submit" class="btn btn-primary">
+					<i class="fa fa-user-md"></i>Send Message
+				</button>
 			</div>
 
-			<div class ="row"><!--  //row start -->
-<!-- //ONE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
 
-<!-- //TWO -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //THREE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FOUR -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FIVE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //SIX -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-			</div> <!--  //row end -->
+		</form>
 
-<center>
-	<ul class="pagination"><!--  //Bootstrap Page No Class -->
-		<li><a href="shop.php">First Page</a></li>
-		<li><a href="shop.php">2</a></li>
-		<li><a href="shop.php">3</a></li>
-		<li><a href="shop.php">4</a></li>
-		<li><a href="shop.php">5</a></li>
-		<li><a href="shop.php">Last Page</a></li>
-	</ul>
-</center>
+	</div> <!-- //box closes -->
+</div><!-- //contact page start -->
 
-		</div> <!-- // used 3 by sidebar left 9 by shop menu  CLOSED-->
+<!-- //CONTACT US PAGE ENDEDED -->
+
 
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 

@@ -87,10 +87,10 @@
 				<div class="navbar-collapse collapse" id="navigation"><!--  // navbar collapse start -->
 					<div class="padding-nav"><!--  //padding nav open -->
 						<ul class="nav navbar-nav navbar-left">
-							<li>
+							<li class="active">
 								<a href="index.php"> Home</a>
 							</li>
-							<li  class="active" >
+							<li   >
 								<a href="shop.php"> Shop</a>
 							</li>
 							<li>
@@ -146,7 +146,7 @@
 		<div class="col-md-12"><!--  //column on medium screen 1 open -->
 			<ul class="breadcrumb"><!--  //bootstrap default class for navigation-->
 				<li><a href="home.php">Home</a></li>
-				<li>Shop</li>
+				<li>Registration</li>
 			</ul>	
 		</div> <!-- //column on medium screen 1 open -->
 
@@ -160,146 +160,66 @@
 		</div>
 <!-- // sidebar code end -->
 
-		<div class="col-md-9"> <!-- // used 3 by sidebar left 9 by shop menu  OPEN-->
-			<div class="box">
-				<h1>Shop</h1>
-				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<!-- //CONTACT US PAGE STARTED -->
+
+<div class="col-md-9"> <!-- //contact page start -->
+	<div class="box"> <!-- //box opens -->
+		<div class ="box-header">
+			<center>
+				<h2>Gamer's Registration</h2>
+			</center>			
+		</div>
+
+		<form action="customer_registration.php" method="post" enctype="multipart/form-data">
+			
+			<div class="form-group">
+				<label>Customer Name</label>
+				<input type="text" name="c_name" required="" class="form-control">				
+			</div>			
+			<div class="form-group">
+				<label>Customer Email</label>
+				<input type="text" name="c_email" required="" class="form-control">				
 			</div>
 
-			<div class ="row"><!--  //row start -->
-<!-- //ONE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
+			<div class="form-group">
+				<label>Customer Password</label>
+				<input type="password" name="c_pasword" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Country</label>
+				<input type="text" name="c_country" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>City</label>
+				<input type="text" name="c_city" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Contact Number</label>
+				<input type="text" name="c_number" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Address</label>
+				<input type="text" name="c_address" required="" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label>Image</label>
+				<input type="file" name="c_image" required="" class="form-control">				
+			</div>
+			<div class="text-center">
+				<button type="submit" name="submit" class="btn btn-primary">
+					<i class="fa fa-user-md"></i>Register
+				</button>
+			</div>
 
-<!-- //TWO -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //THREE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FOUR -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FIVE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //SIX -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-			</div> <!--  //row end -->
 
-<center>
-	<ul class="pagination"><!--  //Bootstrap Page No Class -->
-		<li><a href="shop.php">First Page</a></li>
-		<li><a href="shop.php">2</a></li>
-		<li><a href="shop.php">3</a></li>
-		<li><a href="shop.php">4</a></li>
-		<li><a href="shop.php">5</a></li>
-		<li><a href="shop.php">Last Page</a></li>
-	</ul>
-</center>
+		</form>
 
-		</div> <!-- // used 3 by sidebar left 9 by shop menu  CLOSED-->
+	</div> <!-- //box closes -->
+</div><!-- //contact page start -->
+
+<!-- //CONTACT US PAGE ENDEDED -->
+
 
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 
