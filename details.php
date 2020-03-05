@@ -227,12 +227,14 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-5 control-label">System Size</label>
+							<label class="col-md-5 control-label">Game Edition</label>
 							<div class="col-md-7">
 								<select name="system_size" class="form-control">
-									<option>Select System Bit</option>
-									<option>32 Bit</option>
-									<option>64 Bit</option>
+									<option>Select Edition</option>
+									<option>Master Edition</option>
+									<option>Platinium Edition</option>
+									<option>Gold Edition</option>
+									<option>Standard Edition</option>
 								</select>
 							</div>	
 						</div>

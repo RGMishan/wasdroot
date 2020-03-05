@@ -160,6 +160,22 @@
 		</div>
 <!-- // sidebar code end -->
 
+
+<!-- //side part used out of 12 open -->
+
+<div class="col-md-9">
+	<!-- //including my order.php page --> 
+	<?php
+		if(isset($_GET['my_order'])){
+		include("my_order.php");
+		}
+
+	?>		
+</div>
+
+<!-- //side part used out of 12 closed -->
+
+
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 
 

@@ -165,7 +165,7 @@
 						<th colspan="2">Product</th>
 						<th>Quantity</th>
 						<th>Unit Price</th>
-						<th>Size</th>
+						<th>Edition</th>
 						<th colspan="1">Delete</th>
 						<th colspan="1">Sub Total</th>
 					</tr>
@@ -177,7 +177,7 @@
 						<td>FORTNITE BATTLE ROYALE</td>
 						<td>2</td>
 						<td>INR 500</td>
-						<td>64 bit</td>
+						<td>Gold Edition</td>
 						<td><input type="checkbox" name="remove[]"></td>
 						<td>INR 600</td>
 					</tr>	
@@ -187,7 +187,7 @@
 						<td>MINECRAFT</td>
 						<td>2</td>
 						<td>INR 400</td>
-						<td>64 bit</td>
+						<td>Gold Edition</td>
 						<td><input type="checkbox" name="remove[]"></td>
 						<td>INR 800</td>
 					</tr>	
