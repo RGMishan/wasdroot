@@ -169,8 +169,36 @@
 		if(isset($_GET['my_order'])){
 		include("my_order.php");
 		}
+	?>	
 
-	?>		
+	<!-- //including pay offline.php page --> 
+	<?php
+		if(isset($_GET['pay_offline'])){
+		include("pay_offline.php");
+		}
+	?>	
+
+	<!-- //including edit account.php page --> 
+	<?php
+		if(isset($_GET['edit_act'])){
+		include("edit_act.php");
+		}
+	?>	
+
+	<!-- //including change password.php page --> 
+	<?php
+		if(isset($_GET['change_pass'])){
+		include("change_password.php");
+		}
+	?>	
+
+	<!-- //including delete.php page --> 
+	<?php
+		if(isset($_GET['delete_ac'])){
+		include("delete_ac.php");
+		}
+	?>	
+
 </div>
 
 <!-- //side part used out of 12 closed -->
