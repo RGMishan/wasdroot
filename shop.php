@@ -34,7 +34,7 @@ include ("functions/functions.php");
 					</a>
 
 					<a href= "#" >
-						Shopping cart total price : INR 100, Total Item 2
+						Shopping cart total price : INR <?php totalPrice(); ?>, Total Item <?php item(); ?>
 					</a>
 
 				</div><!-- //Bootstrap class creates 12 columns #CLOSED -->
@@ -121,7 +121,7 @@ include ("functions/functions.php");
 					</div><!--  //padding nav close -->
 					<a href="cart.php" class= "btn btn-primary navbar-btn right"><!--  //bootstrap used -->
 						<i class="fa fa-shopping-cart"></i>
-						<span>4 items in Cart</span>
+						<span><?php item(); ?> items in Cart</span>
 					</a>
 					<div class="navbar-collapse collapse right"><!--  //nav collapse right start -->
 						<button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">

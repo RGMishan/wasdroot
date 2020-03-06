@@ -55,7 +55,7 @@ include ("functions/functions.php");
 					</a>
 
 					<a href= "#" >
-						Shopping cart total price : INR 100, Total Item 2
+						Shopping cart total price : INR <?php totalPrice(); ?>, Total Item <?php item(); ?>
 					</a>
 
 				</div><!-- //Bootstrap class creates 12 columns #CLOSED -->
@@ -139,7 +139,7 @@ include ("functions/functions.php");
 					</div><!--  //padding nav close -->
 					<a href="cart.php" class= "btn btn-primary navbar-btn right"><!--  //bootstrap used -->
 						<i class="fa fa-shopping-cart"></i>
-						<span>4 items in Cart</span>
+						<span><?php item(); ?> items in Cart</span>
 					</a>
 					<div class="navbar-collapse collapse right"><!--  //nav collapse right start -->
 						<button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
@@ -242,10 +242,12 @@ include ("functions/functions.php");
 		<div class="col-sm-6"><!-- //starting of col sm 6  part 2-->
 			<div class="box"> <!-- //box open -->
 				<h1 class="text=center"><?php echo $p_title ?></h1> <!-- //text name  -->
-
-					<form action="index.php?add_cart=<?php echo $pro_id ?>" method="post" class="form-horizontal"> <!-- //form opened --> 
+<?php
+	addCart();
+?>
+					<form action="details.php?add_cart=<?php echo $pro_id ?>" method="post" class="form-horizontal"> <!-- //form opened --> 
 						<div class="form-group">
-							<label class="col-md-5 control-label">Game Quantity</label>
+							<label class="col-md-5 control-label">CD Quantity</label>
 							<div class="col-md-7">
 								<select name="product_qty" class="form-control">
 									<option>1</option>
@@ -260,7 +262,7 @@ include ("functions/functions.php");
 						<div class="form-group">
 							<label class="col-md-5 control-label">Game Edition</label>
 							<div class="col-md-7">
-								<select name="system_size" class="form-control">
+								<select name="product_size" class="form-control">
 									<option>Select Edition</option>
 									<option>Master Edition</option>
 									<option>Platinium Edition</option>
@@ -322,46 +324,37 @@ include ("functions/functions.php");
 			</div>
 		</div>	
 <!-- //Images of the Also May Like Games Start -->
-<!-- //first image you may like -->
-		<div class="center-responsive col-md-3">
-			<div class="product same-height">
-				<a href="">
-					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
-			    </a>
-			<div class="text">
-				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
-				<p class="price">INR 100</p>
-			</div>
-			</div>			
-		</div>
 
-<!-- //second image you may like -->
-		<div class="center-responsive col-md-3">
-			<div class="product same-height">
-				<a href="">
-					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
-			    </a>
-			<div class="text">
-				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
-				<p class="price">INR 100</p>
-			</div>
-			</div>			
-		</div>
-<!-- //Third image you may like -->
-		<div class="center-responsive col-md-3">
-			<div class="product same-height">
-				<a href="">
-					<img src="admin_area/product_images/pc_game/witcher3.jpg" class="img-responsive">
-			    </a>
-			<div class="text">
-				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
-				<p class="price">INR 100</p>
-			</div>
-			</div>			
-		</div>
-<!-- //Images of the Also May Like Games End -->
+	<?php
 
-	</div>
+	$get_product="SELECT * from products order by 1 LIMIT 0,3";
+	$run_product=mysqli_query($con, $get_product);
+	while ($row=mysqli_fetch_array($run_product)) {
+		$pro_id=$row['product_id'];
+		$product_title=$row['product_title'];
+		$product_price=$row['product_price'];
+		$product_img1=$row['product_img1'];
+		echo "
+		<div class='center-responsive col-md-3 col-sm-6'>
+			
+			<div class='product same-height'>
+			<a href='details.php?pro_id=$pro_id'>
+			<img src='admin_area/product_images/$product_img1' class='img-responsive'>
+			</a>
+			
+			<div>
+			<h3><a href = 'details.php?pro_id=$pro_id'>$product_title</a></h3>
+			<p class='price'></p>
+			</div>
+			
+			</div>
+		
+		</div>
+		";
+	}
+
+	?>
+
 <!-- //ALSO LIKE ITEM CLOSED -->
 
 </div> <!--  //end div tag -->
