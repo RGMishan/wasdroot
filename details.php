@@ -2,6 +2,27 @@
 include ("includes/db.php");
 include ("functions/functions.php");
 ?>
+<?php
+	if(isset($_GET['pro_id'])){
+		$pro_id=$_GET['pro_id'];
+		$get_product="SELECT * FROM products where product_id='$pro_id' ";
+		$run_product=mysqli_query($con, $get_product);
+		$row_product=mysqli_fetch_array($run_product);
+		$p_cat_id=$row_product['p_cat_id'];
+		$p_title=$row_product['product_title'];
+		$p_price=$row_product['product_price'];
+		$p_desc=$row_product['product_desc'];
+		$p_img1=$row_product['product_img1'];
+		$p_img2=$row_product['product_img2'];
+		$p_img3=$row_product['product_img3'];
+		$get_p_cat="SELECT * FROM product_category where p_cat_id='$p_cat_id' ";
+		$run_p_cat=mysqli_query($con, $get_p_cat);
+		$row_p_cat=mysqli_fetch_array($run_p_cat);
+		$p_cat_id=$row_p_cat['p_cat_id'];
+		$p_cat_title=$row_p_cat['p_cat_title'];
+	}
+?>
+
 
 
  <!DOCTYPE html>
@@ -153,6 +174,9 @@ include ("functions/functions.php");
 			<ul class="breadcrumb"><!--  //bootstrap default class for navigation-->
 				<li><a href="home.php">Home</a></li>
 				<li>Shop</li>
+				<li><a href="shop.php?p_cat=<?php echo $p_cat_id;?>"><?php echo $p_cat_title ?></a></li>
+				<li><?php echo $p_title ?></li>
+				
 			</ul>	
 		</div> <!-- //column on medium screen 1 open -->
 
@@ -182,19 +206,19 @@ include ("functions/functions.php");
 						
 						<div class="item active">
 							<center>
-								<img src="admin_area/product_images/hot/oriandwill.jpg" class="img-responsive">
+								<img src="admin_area/product_images/<?php echo $p_img1 ?>" class="img-responsive">
 							</center>
 						</div>
 
 						<div class="item">
 							<center>
-								<img src="admin_area/product_images/hot/marvelavengers.jpg" class="img-responsive">
+								<img src="admin_area/product_images/<?php echo $p_img2 ?>" class="img-responsive">
 							</center>
 						</div>
 
 						<div class="item">
 							<center>
-								<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
+								<img src="admin_area/product_images/<?php echo $p_img3 ?>" class="img-responsive">
 							</center>
 						</div>
 
@@ -217,8 +241,9 @@ include ("functions/functions.php");
 
 		<div class="col-sm-6"><!-- //starting of col sm 6  part 2-->
 			<div class="box"> <!-- //box open -->
-				<h1 class="text=center">ALIEN GAME THE PC GAME</h1> <!-- //text name  -->
-					<form action="details.php" method="post" class="form-horizontal"> <!-- //form opened --> 
+				<h1 class="text=center"><?php echo $p_title ?></h1> <!-- //text name  -->
+
+					<form action="index.php?add_cart=<?php echo $pro_id ?>" method="post" class="form-horizontal"> <!-- //form opened --> 
 						<div class="form-group">
 							<label class="col-md-5 control-label">Game Quantity</label>
 							<div class="col-md-7">
@@ -244,7 +269,7 @@ include ("functions/functions.php");
 								</select>
 							</div>	
 						</div>
-						<p class="price">INR 100</p>
+						<p class="price"><?php echo $p_price ?></p>
 						<p class="text-center buttons">
 							<button class="btn btn-primary" type="submit">
 								<i class="fa fa-shopping-cart"></i>Add To Cart
@@ -256,19 +281,19 @@ include ("functions/functions.php");
 <!-- //First Image -->
 		<div class="col-xs-4">
 			<a href="#" class="thumb">
-				<img src="admin_area/product_images/hot/oriandwill.jpg" class="img-responsive">
+				<img src="admin_area/product_images/<?php echo $p_img1 ?>" class="img-responsive">
 			</a>
 		</div>
 <!-- //Second Image -->
 		<div class="col-xs-4">
 			<a href="#" class="thumb">
-				<img src="admin_area/product_images/hot/marvelavengers.jpg" class="img-responsive">
+				<img src="admin_area/product_images/<?php echo $p_img2 ?>" class="img-responsive">
 			</a>
 		</div>
 <!-- //Third Image -->
 		<div class="col-xs-4">
 			<a href="#" class="thumb">
-				<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
+				<img src="admin_area/product_images/<?php echo $p_img3 ?>" class="img-responsive">
 			</a>
 		</div>
 
@@ -281,13 +306,7 @@ include ("functions/functions.php");
 	
 	<div class="box" id ="details">
 		<h4>Game Details</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
-		<h4>Processor Size Available</h4>
+			<p><?php echo $p_desc ?></h4>
 		<ul>
 			<li>34-bit</li>
 			<li>64-bit</li>
