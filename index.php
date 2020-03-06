@@ -1,5 +1,7 @@
 <?php
 include ("includes/db.php");
+include ("functions/functions.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -266,166 +268,10 @@ include ("includes/db.php");
 
 <div id="content" class="container"> <!-- //container opened -->
 	<div class="row"> <!-- //row open -->
-
-<!-- //First	 -->	
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100</p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //second -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100</p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //third -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //fourth -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //fifth -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //sixth -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //seventh -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
-
-<!-- //eighth -->
-
-		<div class="col-sm-3 col-sm-6 single"> <!-- //start of the product  -->
-			<div class="product"> <!-- //products store open -->
-				<a href="details.php">
-					<img src="admin_area/product_images/hot/lof2.jpg" class="img-responsive">
-				</a> 
-				<div class="text">
-					<h3><a href="details.php">Layers Of Fear 2</a></h3>
-				<p class="price"> INR 100 </p>
-				<p class="buttons">
-					<a href="details.php" class="btn btn-default">View Details</a>
-					<a href="details.php" class="btn btn-primary">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</p>		
-				</div>
-			</div>		<!-- //product store closes -->
-		</div><!-- 	//close of the product	 -->
+<!-- //Product showing dinamically -->
+		<?php
+		getPro();
+		?>
 
 	</div> <!-- //row closed -->
 </div> <!-- //container closed -->

@@ -23,9 +23,15 @@
 			<div class="col-md-3 col-sm-6"><!--  //colmd 2 open -->
 				<h4>Top Game Categories</h4>
 				<ul>
-					<li><a href = "#"> PC </a></li>
-					<li><a href = "#"> XBox </a></li>
-					<li><a href = "#"> PS4 </a></li>
+					<?php
+					$get_p_cats="SELECT * FROM product_category";
+					$run_p_cats=mysqli_query($con,$get_p_cats);
+					while ($row_p_cat=mysqli_fetch_array($run_p_cats)){
+						$p_cat_id = $row_p_cat['p_cat_id'];
+						$p_cat_title = $row_p_cat['p_cat_title'];
+						echo "<li><a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a></li>";
+					}
+					?>
 				</ul>	
 				<hr class="hidden-md hidden-lg">			
 			</div><!--  //colmd 2 closed -->

@@ -140,7 +140,7 @@ include ("includes/db.php");
 if (isset($_POST['submit'])) {
 	$product_title=$_POST['product_title'];
 	$product_cat=$_POST['product_cat'];
-	$product_cat=$_POST['cat'];
+	$cat=$_POST['cat'];
 	$product_price=$_POST['product_price'];
 	$product_desc=$_POST['product_desc'];
 	$product_keywords=$_POST['product_keywords'];
@@ -157,15 +157,13 @@ if (isset($_POST['submit'])) {
 	move_uploaded_file($temp_name2, "product_images/$product_img2");
 	move_uploaded_file($temp_name3, "product_images/$product_img3");
 
-	$inset_product = "INSERT INTO products (p_cat_id, cat_id, date, product_title, product_img1, product_img2, product_img3, product_price, product_desc, product_keywords) VALUES ( '$product_cat', '$product_cat', NOW() , '$product_title', '$product_img1', '$product_img2', '$product_img3', '$product_price' , '$product_desc', '$product_keywords' )";
+	$inset_product = "INSERT INTO products (p_cat_id, cat_id, date, product_title, product_img1, product_img2, product_img3, product_price, product_desc, product_keywords) VALUES ( '$product_cat', '$cat', NOW() , '$product_title', '$product_img1', '$product_img2', '$product_img3', '$product_price' , '$product_desc', '$product_keywords' )";
 
 	$run_product = mysqli_query($con, $inset_product);
 
 	if ($run_product) {
 		echo "<script>alert('Product Inserted Successfuly')</script>";
 		echo "<script>window.open('insert_product.php')</script>";
-		echo "Inserted Testing Caseinner";
-	echo "test2";
 	}
 	
 }
