@@ -1,8 +1,13 @@
+<?php
+include ("includes/db.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>WASD STORE</title>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- CSS LINK -->
 <link rel= "stylesheet" href= "styles/style.css">
 
@@ -149,6 +154,8 @@
 				<li data-target="myCarousel" data-slide-to="3" ></li>
 			</ol>
 			<div class="carousel-inner"> <!-- //courouser inner started -->
+				<!-- 
+				//FOR STATIC
 				<div class="item active">
 					<img src="admin_area/slider_images/1main.png">
 				</div>
@@ -160,7 +167,35 @@
 				</div>
 				<div class="item">
 					<img src="admin_area/slider_images/4.jpg">
-				</div>
+				</div> -->
+
+				<?php
+					$get_slider = "SELECT * FROM slider LIMIT 0,1";
+					$run_slider = mysqli_query($con,$get_slider);
+					while($row=mysqli_fetch_array($run_slider)){
+						$slider_name=$row['slider_name'];
+						$slider_image=$row['slider_image'];
+					echo "<div class='item active'>
+							<img src='admin_area/slider_images/$slider_image'>
+					</div>
+					";
+					}
+
+				?>
+
+				<?php
+					$get_slider = "SELECT * FROM slider LIMIT 1,3";
+					$run_slider = mysqli_query($con,$get_slider);
+					while($row=mysqli_fetch_array($run_slider)){
+						$slider_name=$row['slider_name'];
+						$slider_image=$row['slider_image'];
+					echo "<div class='item'>
+							<img src='admin_area/slider_images/$slider_image'>
+					</div>
+					";
+					}
+
+				?>
 
 			</div><!-- //courouser inner closed -->
 			<a href="#myCarousel" class="left carousel-control" data-slide="prev">
