@@ -70,6 +70,9 @@ include ("functions/functions.php");
 
 		</div><!-- Top Bar Closed -->
 
+
+
+
 		<div class= "navbar navbar-default" id="navbar"><!--  //navbar opening -->
 			<div class = "container"><!--  //container opening -->
 				<div class = "navbar-header"><!-- // header opening -->
@@ -145,16 +148,19 @@ include ("functions/functions.php");
 			</div><!--  //container closing -->
 		</div> <!-- //navbar close -->
 
+
+
+
 <!-- // Main shop work start -->
 
-<div id= "content"> 
+<div id= "content"> <!-- //content opened -->
 	<div class="container"> <!--  //starting container -->
 		<div class="col-md-12"><!--  //column on medium screen 1 open -->
 			<ul class="breadcrumb"><!--  //bootstrap default class for navigation-->
 				<li><a href="home.php">Home</a></li>
 				<li>Shop</li>
 			</ul>	
-		</div> <!-- //column on medium screen 1 open -->
+		</div> <!-- //column on medium screen 1 closed -->
 
 <!-- // sidebar code start -->
 		<div class="col-md-3">
@@ -167,155 +173,102 @@ include ("functions/functions.php");
 <!-- // sidebar code end -->
 
 		<div class="col-md-9"> <!-- // used 3 by sidebar left 9 by shop menu  OPEN-->
-			<div class="box">
-				<h1>Shop</h1>
-				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+<!-- //SHOP SIDE -->
+			<?php
+			if(!isset($_GET['p_cat'])){
 
-			<div class ="row"><!--  //row start -->
-<!-- //ONE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
+				if(!isset($_GET['cat_id'])){
+					echo "<div class='box'>
+					<h1>Shop</h1>
+					<p>The place where you get all the game using the filter in categories and platforms.</p>
+					</div>";
+				}
+			}
+			?>
 
-<!-- //TWO -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
+		<div class ="row"><!--  //row start -->
+			<?php
+			if(!isset($_GET['p_cat'])){
+				if(!isset($_GET['cat_id'])){
+
+					$per_page=6;
+					if(isset($_GET['page'])){
+						$page=$_GET['page'];
+					}else{
+						$page=1;
+					}
+					$start_from=($page-1) * $per_page;
+					$get_product="SELECT * from products order by 1 DESC LIMIT $start_from, $per_page";
+					$run_pro=mysqli_query($con, $get_product);
+					while ($row=mysqli_fetch_array($run_pro)) {
+						$pro_id=$row['product_id'];
+						$pro_title=$row['product_title'];
+						$pro_price=$row['product_price'];
+						$pro_img1=$row['product_img1'];
+
+						echo "
+						<div class='col-md-4 col-sm-6 center-responsive'>
+						<div class='product'>
+						<a href='details.php?pro_id=$pro_id'>
+						<img src='admin_area/product_images/$pro_img1' class='img-responsive'>
 						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
+						
+						<div class='text'>
+						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+						
+						<p class='price'>
+						INR $pro_price
+						</p>
+						<p class='buttons'>
+						<a href='details.php?pro_id=$pro_id class='btn btn-default'>View Details</a>
+						<a href='details.php?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'>Add To Cart</i></a>
+						</p>
+
 						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //THREE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
 						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FOUR -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
 						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //FIVE -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-<!-- //SIX -->
-				<div class="col-md-4 col-sm-6 center responsive" > <!-- // shop menu 9 is nested and formed as 12 open -->
-					<div class="product">
-						<a href="details.php">
-							<img src="admin_area/product_images/pc_game/alien.jpg" class="img-responsive">
-						</a>
-						<div class="text">
-							<h3>
-								<a href="details.php">Alien</a>
-							</h3>
-							<p class="price">INR 100</p>
-							<p class="buttons">
-								<a href="details.php" class= "btn btn-default">View Details</a>
-								<a href="details.php" class= "btn btn-primary"><i class= "fa fa-shopping-cart"></i>Add To Cart</a>	
-							</p>
-						</div>
-					</div>
-				</div>	<!-- // shop menu 9 is nested and formed as 12 close -->
-				
-			</div> <!--  //row end -->
+
+						";
+					}
+				}
+			}
+			?>
+		</div> <!--  //row end -->
 
 <center>
 	<ul class="pagination"><!--  //Bootstrap Page No Class -->
-		<li><a href="shop.php">First Page</a></li>
-		<li><a href="shop.php">2</a></li>
-		<li><a href="shop.php">3</a></li>
-		<li><a href="shop.php">4</a></li>
-		<li><a href="shop.php">5</a></li>
-		<li><a href="shop.php">Last Page</a></li>
+			<?php
+			$per_page=6;
+			$query="select * from products";
+			$result=mysqli_query($con,$query);
+			$total_record=mysqli_num_rows($result);
+			$total_pages=ceil($total_record / $per_page);
+			echo "
+			<li><a href='shop.php?page=1'> ".'FIRST PAGE'."</a></li>";
+			for($i=1; $i<=$total_pages; $i++){
+				echo "
+				<li><a href='shop.php?page=".$i."'>".$i."</a></li>
+				";
+			}
+			echo "
+			<li> <a href='shop.php?page=$total_pages'>".'Last Page'."</a></li>
+			";
+			?>
 	</ul>
 </center>
+
+	<?php
+	getPcatPro();
+	getCatPro();
+	?>
+	
 
 		</div> <!-- // used 3 by sidebar left 9 by shop menu  CLOSED-->
 
 	</div><!--  //closing container --> 
 </div> <!-- closing content --> 
 
-
-
 <!-- // Main shop work end -->
-
-
-
 
 <!--FOOTER START-->
 <?php include("includes/footer.php"); ?>
