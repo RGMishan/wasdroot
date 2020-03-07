@@ -30,7 +30,13 @@ include ("functions/functions.php");
 				<div class = "col-md-6 offer"> <!-- //Bootstrap class creates 12 columns for navbar and used half -->
 					<a href= "#" class = "btn btn-success btn sm">
 						<!-- //class to get button and that button is small-->
-						WELCOME GAMER
+						<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "WELCOME GAMER";
+							}else{
+								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+							}
+						?>
 					</a>
 
 					<a href= "#" >
@@ -230,3 +236,25 @@ include ("functions/functions.php");
 
 </body>
 </html>
+
+<?
+//ADMIN MAIL
+
+if(isset($_POST['submit'])){
+	$senderName=$_POST['name'];
+	$senderEmail=$_POST['email'];
+	$senderSubject=$_POST['subject'];
+	$senderMassage=$_POST['massage'];
+	$receiverEmail="regmimishan@gmail.com";
+	mail($receiverEmail,$senderName,$senderSubject,$senderMassage,$senderEmail);
+
+
+//CUSTOMER MAIL
+$email=$_POST['email'];
+$subject="WELCOME TO WASD";
+$msg="We will reach you soon. Thanks for the mail.";
+$from="regmimishan@gmail.com";
+mail($email,$subject,$msg,$from);
+echo "<h2 align = 'center'>MAIL SENT</h2>";
+}
+?>

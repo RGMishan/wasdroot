@@ -30,7 +30,13 @@ include ("functions/functions.php");
 				<div class = "col-md-6 offer"> <!-- //Bootstrap class creates 12 columns for navbar and used half -->
 					<a href= "#" class = "btn btn-success btn sm">
 						<!-- //class to get button and that button is small-->
-						WELCOME GAMER
+						<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "WELCOME GAMER";
+							}else{
+								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+							}
+						?>
 					</a>
 
 					<a href= "#" >
@@ -163,7 +169,15 @@ include ("functions/functions.php");
 	<div class= "box">
 		<form action="cart.php" method="post" enctype="multipart-form-data">
 			<h1>Shopping Cart</h1>
-			<p class="text-muted"> Currently you have <?php item(); ?> item(s) in your cart</p>
+
+			<?php
+			$ip_add=getUserIP();
+			$select_cart="SELECT * FROM CART WHERE ip_add='$ip_add'";
+			$run_cart=mysqli_query($con, $select_cart);
+			$count=mysqli_num_rows($run_cart);
+			?>
+
+			<p class="text-muted"> Currently you have <?php echo $count ?> item(s) in your cart</p>
 			<div class="table-responsive"><!-- //table responsive start -->
 			<table class="table"> <!-- //bootstrap class -->
 				<thead><!--  //makes bold -->
@@ -178,27 +192,36 @@ include ("functions/functions.php");
 				</thead>
 				
 				<tbody>
-					<tr>
-						<td><img src="admin_area/product_images/pc_game/minecraft.jpg"></td>
-						<td>FORTNITE BATTLE ROYALE</td>
-						<td>2</td>
-						<td>INR 500</td>
-						<td>Gold Edition</td>
-						<td><input type="checkbox" name="remove[]"></td>
-						<td>INR 600</td>
-					</tr>	
+						<?php
+						$total=0;
+				while ($row=mysqli_fetch_array($run_cart)) {	
+					$pro_id = $row['p_id'];
+					$pro_size = $row['size'];
+					$pro_qty = $row['qty'];
+					$get_product="SELECT * FROM products where product_id='$pro_id";
+					$run_pro=mysqli_query($con,$get_product) ;
+				while ($row=mysqli_fetch_array($run_pro)) 
 
+				 {
+					$p_title=$row['product_title'];
+					$p_img1=$row['product_img1'];
+					$p_price=$row['product_price'];
+					$sub_total=$row['product_price'] * $pro_qty;
+					$total += $sub_total;
+					
+				?>
 					<tr>
-						<td><img src="admin_area/product_images/pc_game/minecraft.jpg"></td>
-						<td>MINECRAFT</td>
-						<td>2</td>
-						<td>INR 400</td>
-						<td>Gold Edition</td>
-						<td><input type="checkbox" name="remove[]"></td>
-						<td>INR 800</td>
+						<td><img src="admin_area/product_images/<?php echo $p_img1 ?>"></td>
+						<td><?php echo $p_title ?></td>
+						<td><?php echo $pro_qty ?></td>
+						<td>INR <?php echo $p_price ?></td>
+						<td><?php echo $pro_size ?></td>
+						<td><input type="checkbox" name="remove[]" value="<?php echo $p_id ?>"></td>
+						<td>INR <?php echo $sub_total ?></td>
 					</tr>	
+				<?php  }  } ?>
 				</tbody>
-
+				
 				<tfoot>
 					<tr>
 						<th colspan="5">Total</th>
@@ -207,6 +230,18 @@ include ("functions/functions.php");
 				</tfoot>
 			</table>
 			</div> <!-- //table responsive closing -->
+
+<div class="box-footer" ><!--  //footer box open -->
+
+				<div class="pull-left"><!--  //pull left start -->
+					<h4>TOTAL PRICE</h4>
+				</div> <!-- //pull left closed -->
+
+				<div class ="pull-right">
+				INR  <?php echo  $total; ?>
+				</div>
+
+			</div><!--  //footer box closed -->
 
 			<div class="box-footer" ><!--  //footer box open -->
 
@@ -228,6 +263,25 @@ include ("functions/functions.php");
 		</form>
 	</div> <!-- //box closing -->
 
+<?php
+function update_cart() {
+	global $con;
+	if(isset($_POST['update'])) {
+		foreach ($_POST['remove'] as $remove_id) {
+			$delete_product="DELETE FROM cart where p_id = '$remove_id' ";
+			$run_del=mysqli_query($con,$delete_product);
+			if ($run_del){
+				echo "<script>window.open('cart.php','_self')</script>";
+			}
+		}
+	}
+
+}
+
+echo @$up_cart= update_cart();
+
+?>
+
 
 <!-- //ALSO LIKE ITEM OPEN -->
 	<div id="row same-height-row">
@@ -245,7 +299,7 @@ include ("functions/functions.php");
 			    </a>
 			<div class="text">
 				<h3><a href="details.php">THE WITCHER THE PC GAME</a></h3>
-				<p class="price">INR 100</p>
+				<p class="price"><?php echo $total ?></p>
 			</div>
 			</div>			
 		</div>
@@ -298,7 +352,7 @@ include ("functions/functions.php");
 				<tbody>
 					<tr>
 						<td>Order Subtotal</td>
-						<th>INR 5600</th>
+						<th>INR <?php echo $total ?></th>
 					</tr>
 					<tr>
 						<td>Shipping and handling</td>
@@ -310,7 +364,7 @@ include ("functions/functions.php");
 					</tr>
 					<tr class="total">
 						<td>Total</td>
-						<th>INR 5600</th>
+						<th>INR <?php echo $total ?></th>
 					</tr>
 				</tbody>
 			</table>

@@ -51,7 +51,13 @@ include ("functions/functions.php");
 				<div class = "col-md-6 offer"> <!-- //Bootstrap class creates 12 columns for navbar and used half -->
 					<a href= "#" class = "btn btn-success btn sm">
 						<!-- //class to get button and that button is small-->
-						WELCOME GAMER
+						<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "WELCOME GAMER";
+							}else{
+								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+							}
+						?>
 					</a>
 
 					<a href= "#" >

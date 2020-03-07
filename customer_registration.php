@@ -1,3 +1,9 @@
+<?php
+session_start();
+include ("includes/db.php");
+include ("functions/functions.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +30,17 @@
 				<div class = "col-md-6 offer"> <!-- //Bootstrap class creates 12 columns for navbar and used half -->
 					<a href= "#" class = "btn btn-success btn sm">
 						<!-- //class to get button and that button is small-->
-						WELCOME GAMER
+						<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "WELCOME GAMER";
+							}else{
+								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+							}
+						?>
 					</a>
 
 					<a href= "#" >
-						Shopping cart total price : INR 100, Total Item 2
+						Shopping cart total price : INR <?php totalPrice(); ?>, Total Item <?php item(); ?>
 					</a>
 
 				</div><!-- //Bootstrap class creates 12 columns #CLOSED -->
@@ -112,7 +124,7 @@
 					</div><!--  //padding nav close -->
 					<a href="cart.php" class= "btn btn-primary navbar-btn right"><!--  //bootstrap used -->
 						<i class="fa fa-shopping-cart"></i>
-						<span>4 items in Cart</span>
+						<span><?php item(); ?> items in Cart</span>
 					</a>
 					<div class="navbar-collapse collapse right"><!--  //nav collapse right start -->
 						<button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
@@ -239,3 +251,36 @@
 
 </body>
 </html>
+
+<?php
+
+	if(isset($_POST['submit'])){
+		$c_name=$_POST['c_name'];
+		$c_email=$_POST['c_email'];
+		$c_password=$_POST['c_password'];
+		$c_country=$_POST['c_country'];
+		$c_city=$_POST['c_city'];
+		$c_contact=$_POST['c_contact'];
+		$c_address=$_POST['c_address'];
+		$c_image=$_FILE['c_image']['name'];
+		$c_tmp_image=$_FILES['c_image']['tmp_name'];
+		$c_ip=getUserIP();
+
+		move_uploaded_file($c_tmp_image,"customer/customer_images/$c_image");
+
+		$insert_customer="INSERT into customers (customer_name, customer_email, customer_pass, customer_country, customer_city, customer_contact, customer_address, customer_image, customer_ip) values('$c_name','$c_email','$c_password','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+		$run_customer=mysqli_query($con,$insert_customer);
+		$sel_cart="SELECT * from cart where ip_add='$c_ip'";
+		$run_cart=mysqli_query($con,$sel_cart);
+		$check_cart=mysqli_num_rows($run_cart);
+		if($check_cart>0){ //goes to checkout if item is there in cart
+			$_SESSION['customer_email']=$c_email;
+			echo "<script>alert('You have been registred in WASD database.')</script>";
+			echo "<script>windows.open('checkout.php','_self')</script>";
+		}else{
+			$_SESSION['customer_email']=$c_email; //goes to home page if cart is empty
+			echo "<script>alert('You have been registred in WASD database.')</script>";
+			echo "<script>windows.open('index.php','_self')</script>";
+		}
+	}
+?>
