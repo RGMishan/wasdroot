@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("includes/db.php");
 include ("functions/functions.php");
 
@@ -35,7 +36,7 @@ include ("functions/functions.php");
 							if(!isset($_SESSION['customer_email'])){
 								echo "WELCOME GAMER";
 							}else{
-								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+								echo "HY: " .$_SESSION['customer_email'] . "";
 							}
 						?>
 					</a>
@@ -66,9 +67,13 @@ include ("functions/functions.php");
 						</li>
 
 						<li>
-							<a href= "login.php">
-								Login
-							</a>
+							<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "<a href = 'checkout.php'>Login</a>";
+							}else{
+								echo "<a href = 'logout.php'>Logout</a>";
+							}
+							?>
 						</li>
 					</ul>
 

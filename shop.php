@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("includes/db.php");
 include ("functions/functions.php");
 
@@ -65,9 +66,13 @@ include ("functions/functions.php");
 						</li>
 
 						<li>
-							<a href= "login.php">
-								Login
-							</a>
+							<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "<a href = 'checkout.php'>Login</a>";
+							}else{
+								echo "<a = logout.php>Logout</a>";
+							}
+							?>
 						</li>
 					</ul>
 

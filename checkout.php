@@ -2,7 +2,6 @@
 session_start();
 include ("includes/db.php");
 include ("functions/functions.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +59,7 @@ include ("functions/functions.php");
 						</li>
 
 						<li>
-							<a href= "ccart.php.php">
+							<a href= "cart.php">
 								Go to Cart
 							</a>
 						</li>
@@ -70,7 +69,7 @@ include ("functions/functions.php");
 							if(!isset($_SESSION['customer_email'])){
 								echo "<a href = 'checkout.php'>Login</a>";
 							}else{
-								echo "<a href = 'logout.php'>Logout</a>";
+								echo "<a = logout.php>Logout</a>";
 							}
 							?>
 						</li>
@@ -104,13 +103,13 @@ include ("functions/functions.php");
 				<div class="navbar-collapse collapse" id="navigation"><!--  // navbar collapse start -->
 					<div class="padding-nav"><!--  //padding nav open -->
 						<ul class="nav navbar-nav navbar-left">
-							<li>
+							<li >
 								<a href="index.php"> Home</a>
 							</li>
 							<li   >
 								<a href="shop.php"> Shop</a>
 							</li>
-							<li>
+							<li class="active">
 								<a href="checkout.php"> My Account</a>
 							</li>
 							<li>
@@ -122,7 +121,7 @@ include ("functions/functions.php");
 							<li>
 								<a href="services.php">Services</a> <!-- //COMPATIBILITY GOES HERE -->
 							</li>
-							<li class="active">
+							<li>
 								<a href="contactus.php">Contact Us</a>
 							</li>
 						</ul>
@@ -163,7 +162,7 @@ include ("functions/functions.php");
 		<div class="col-md-12"><!--  //column on medium screen 1 open -->
 			<ul class="breadcrumb"><!--  //bootstrap default class for navigation-->
 				<li><a href="home.php">Home</a></li>
-				<li>Contact Us</li>
+				<li>Checkout</li>
 			</ul>	
 		</div> <!-- //column on medium screen 1 open -->
 
@@ -178,48 +177,20 @@ include ("functions/functions.php");
 <!-- // sidebar code end -->
 
 
-<!-- //CONTACT US PAGE STARTED -->
+<!-- //checkout started -->
+<div class="col-md-9">
+	<?php
 
-<div class="col-md-9"> <!-- //contact page start -->
-	<div class="box"> <!-- //box opens -->
-		<div class ="box-header">
-			<center>
-				<h2>Contact Us</h2>
-				<p class="text-muted"> Feel free to contact our developers team if you have ay queries or problem with the website.</p>
-			</center>			
-		</div>
+	if(!isset($_SESSION['customer_email'])){
+		include('customer/customer_login.php');
 
-		<form action="contactus.php" method="post">
-			
-			<div class="form-group">
-				<label>Name</label>
-				<input type="text" name="name" required="" class="form-control">				
-			</div>			
-			<div class="form-group">
-				<label>Email</label>
-				<input type="text" name="email" required="" class="form-control">				
-			</div>
-			<div class="form-group">
-				<label>Subject</label>
-				<input type="text" name="subject" required="" class="form-control">				
-			</div>
-			<div class="form-group">
-				<label>Message</label>
-				<textarea name="message" class="form-control"></textarea> 				
-			</div>
-			<div class="text-center">
-				<button type="submit" name="submit" class="btn btn-primary">
-					<i class="fa fa-user-md"></i>Send Message
-				</button>
-			</div>
-
-
-		</form>
-
-	</div> <!-- //box closes -->
-</div><!-- //contact page start -->
-
-<!-- //CONTACT US PAGE ENDEDED -->
+	}else{
+		include('payment_options.php');	
+	}
+	?>
+	
+</div>
+<!-- //checkout endeded -->
 
 
 	</div><!--  //closing container --> 
@@ -227,10 +198,7 @@ include ("functions/functions.php");
 
 
 
-<!-- // Main shop work end -->
-
-
-
+<!-- // Main work end -->
 
 <!--FOOTER START-->
 <?php include("includes/footer.php"); ?>
@@ -241,25 +209,3 @@ include ("functions/functions.php");
 
 </body>
 </html>
-
-<?
-//ADMIN MAIL
-
-if(isset($_POST['submit'])){
-	$senderName=$_POST['name'];
-	$senderEmail=$_POST['email'];
-	$senderSubject=$_POST['subject'];
-	$senderMassage=$_POST['massage'];
-	$receiverEmail="regmimishan@gmail.com";
-	mail($receiverEmail,$senderName,$senderSubject,$senderMassage,$senderEmail);
-
-
-//CUSTOMER MAIL
-$email=$_POST['email'];
-$subject="WELCOME TO WASD";
-$msg="We will reach you soon. Thanks for the mail.";
-$from="regmimishan@gmail.com";
-mail($email,$subject,$msg,$from);
-echo "<h2 align = 'center'>MAIL SENT</h2>";
-}
-?>

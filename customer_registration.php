@@ -34,7 +34,7 @@ include ("functions/functions.php");
 							if(!isset($_SESSION['customer_email'])){
 								echo "WELCOME GAMER";
 							}else{
-								echo "WELCOME: " .$_SESSION['customer_email'] . "";
+								echo "WELCOME: " .$_SESSION['customer_email']. "";
 							}
 						?>
 					</a>
@@ -59,15 +59,19 @@ include ("functions/functions.php");
 						</li>
 
 						<li>
-							<a href= "ccart.php.php">
+							<a href= "cart.php">
 								Go to Cart
 							</a>
 						</li>
 
 						<li>
-							<a href= "login.php">
-								Login
-							</a>
+							<?php
+							if(!isset($_SESSION['customer_email'])){
+								echo "<a href = 'checkout.php'>Login</a>";
+							}else{
+								echo "<a = 'logout.php'>Logout</a>";
+							}
+							?>
 						</li>
 					</ul>
 
