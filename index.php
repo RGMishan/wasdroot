@@ -86,7 +86,7 @@ include ("functions/functions.php");
 			<div class = "container"><!--  //container opening -->
 				<div class = "navbar-header"><!-- // header opening -->
 					<a class= "navbar-brand home" href = "index.php">
-						<img src="images/logo.jpg" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
+						<img src="images/wasdlogo.png" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
 						<img src="images/logo_small.jpg" alt="Small WASD Logo" class ="visible-xs"> <!-- //when screen is extra small bootstrap -->
 					</a>
 					

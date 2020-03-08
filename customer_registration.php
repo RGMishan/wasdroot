@@ -84,7 +84,7 @@ include ("functions/functions.php");
 			<div class = "container"><!--  //container opening -->
 				<div class = "navbar-header"><!-- // header opening -->
 					<a class= "navbar-brand home" href = "index.php">
-						<img src="images/logo.jpg" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
+						<img src="images/wasdlogo.png" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
 						<img src="images/logo_small.jpg" alt="Small WASD Logo" class ="visible-xs"> <!-- //when screen is extra small bootstrap -->
 					</a>
 					
@@ -273,18 +273,38 @@ include ("functions/functions.php");
 		move_uploaded_file($c_tmp_image,"customer/customer_images/$c_image");
 
 		$insert_customer="INSERT into customers (customer_name, customer_email, customer_pass, customer_country, customer_city, customer_contact, customer_address, customer_image, customer_ip) values('$c_name','$c_email','$c_password','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
-		$run_customer=mysqli_query($con,$insert_customer);
+		
+
+		if($con->query($insert_customer) == TRUE)
+
+       {
 		$sel_cart="SELECT * from cart where ip_add='$c_ip'";
 		$run_cart=mysqli_query($con,$sel_cart);
 		$check_cart=mysqli_num_rows($run_cart);
-		if($check_cart>0){ //goes to checkout if item is there in cart
+
+
+		if($check_cart>0)
+		{ //goes to checkout if item is there in cart
 			$_SESSION['customer_email']=$c_email;
 			echo "<script>alert('You have been registred in WASD database.')</script>";
-			echo "<script>windows.open('checkout.php','_self')</script>";
-		}else{
-			$_SESSION['customer_email']=$c_email; //goes to home page if cart is empty
-			echo "<script>alert('You have been registred in WASD database.')</script>";
-			echo "<script>windows.open('index.php','_self')</script>";
+			echo "<script>window.open('checkout.php','_self')</script>";
 		}
+
+		else{
+			$_SESSION['customer_email']=$c_email; 
+
+			//goes to home page if cart is empty
+			echo "<script>alert('You have been registred in WASD database.')</script>";
+			echo "<script>window.open('index.php','_self')</script>";
+		}
+
+
+	}
+
+
+	else
+	{
+		echo "<script>alert('sorry registration not successful.')</script><alert>";
+	}
 	}
 ?>

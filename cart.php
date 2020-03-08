@@ -85,7 +85,7 @@ include ("functions/functions.php");
 			<div class = "container"><!--  //container opening -->
 				<div class = "navbar-header"><!-- // header opening -->
 					<a class= "navbar-brand home" href = "index.php">
-						<img src="images/logo.jpg" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
+						<img src="images/wasdlogo.png" alt="WASD LOGO" height="45" width="150" class ="hidden-xs"> <!-- //hidden when screen is extra small bootstrap -->
 						<img src="images/logo_small.jpg" alt="Small WASD Logo" class ="visible-xs"> <!-- //when screen is extra small bootstrap -->
 					</a>
 					
@@ -203,10 +203,9 @@ include ("functions/functions.php");
 					$pro_id = $row['p_id'];
 					$pro_size = $row['size'];
 					$pro_qty = $row['qty'];
-					$get_product="SELECT * FROM products where product_id='$pro_id";
+					$get_product="SELECT * FROM products where product_id='$pro_id'";
 					$run_pro=mysqli_query($con,$get_product) ;
 				while ($row=mysqli_fetch_array($run_pro)) 
-
 				 {
 					$p_title=$row['product_title'];
 					$p_img1=$row['product_img1'];

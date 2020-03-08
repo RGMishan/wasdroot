@@ -81,7 +81,7 @@
 	<div class="container">
 		<div class="col-md-6">
 			<p class="pull-left">
-				&copy; 2020 Mr. Mishan Regmi
+				&copy; 2020 WASD
 			</p>
 		</div>
 		<div class="col-md-6">
